@@ -1,0 +1,45 @@
+1.MVC (MODEL,VIEW,CONTROLLER)
+2.Only Back End--> MC
+3.Only SSR Front End--> VC
+4.Front End - Blade template Engine
+-------------------------------------
+
+1. Project Skeleton
+2. Laravel 8,9,10,11,12,13
+3. Pre-Recorded:
+===>  composer create-project laravel/laravel:^10.0 example-app
+4. Live Class:
+====> composer create-project laravel/laravel example-app
+
+-----------------------------------------
+Steps:
+1.  Project Structure, Terminology
+2.  (Controller) Routing,Request,Response,Middleware,Controller
+3.  (Model) Migration,Model,Query,ORM
+4.  (View) Blade,JS,Vue.js
+
+-----------------------------------------
+
+TODO:
+1. Understanding Request-Response Model (Route/Controller)
+2. Response
+    -String, int,boolean,null,array,assoc,mul assoc,blob,download
+
+3. Request
+    - Method GET,POST,PUT,PATCH,DELETE
+    - URL Parameter Passing
+    - JSON Body Passing
+    - Request Header
+    - Request Query String
+
+
+4. Laravel (Live Class + Pre-Recorded)
+
+
+----------------
+
+HOW TODO
+env.text-----> .env
+terminal-----> Composer Install--->Vendor
+commad-------> PHP artisan serve
+
