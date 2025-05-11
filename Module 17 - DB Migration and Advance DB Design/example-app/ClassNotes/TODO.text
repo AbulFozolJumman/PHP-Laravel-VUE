@@ -1,0 +1,17 @@
+1. What is Migration
+2. Create your first table using migration
+    - php artisan make:migration create_demo
+    - migration code flow
+    - data type (bigint,varchar,text,datetime,decimal,float,double,boolean,enum)
+    - php artisan migrate
+
+3. Lets database project
+    - Introduce with Database relationship Notation
+    - Which one is our first table, & what about the sequnce
+    - table name should be plural
+    - php artisan make:migration create_users
+    - php artisan make:migration create_customers
+    - php artisan make:migration create_categories
+    - php artisan make:migration create_products
+    - php artisan make:migration create_invoices
+    - php artisan make:migration create_invoice_products
