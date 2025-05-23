@@ -1,0 +1,42 @@
+1. For Practice Create A Controller And Routes
+2. Test our demo controller
+3. Migration
+4. Retrieving All Rows
+5. Retrieving Single Row
+6. Retrieving Single Column
+7. Aggregates
+    - count()
+    - max()
+    - min()
+    - avg()
+    - sum()
+8. Specific column (Best Practice)
+9. Decentralize business logic
+10. Join
+    -inner join() ===> ডাটা বেড়ে গেলে স্লো হবে
+    -left leftJoin()===> ডাটা বেড়ে গেলে অনেক কম স্লো হবে
+    -right rightJoin()===> ডাটা বেড়ে অনেক কম স্লো হবে
+    -cross crossJoin() (Discard)
+
+
+11. ডাটাবেজ View***, Indexing**, Query Optimization** --------> Clustering
+12. ডাটাবেজ ঠিক না থাকলে সব স্লো হয়ে যাবে -
+( Database ) --------> BackEnd ------> FrontEnd
+( Database)  <-------- BackEnd <------ FrontEnd
+
+FrontEnd( দেখানো )
+BackEnd (আনা-নেওয়া)
+Database (স্থায়ী অবস্থান)
+
+13. ডাটাবেজ অসীম না ।
+14. সার্ভারে ১কোটি + সার্ভার ১কোটী
+15. মতিঝিল, গুলশান, যশোর, সিলেটে, চট্রগ্রাম ->
+
+
+
+
+
+
+
+
+
