@@ -9,10 +9,15 @@ use App\Models\Product;
 class DemoController extends Controller
 {
 
-    // Get all rows from DB
+    // Get all brand rows from DB
     public function GetAllBrand(Request $request) {
         return Brand::get();
         // return Brand::all();  //get() & all() both are same
+    }
+    
+    // Get all product with brand rows from DB
+    public function GetAllBrandWithProducts(Request $request) {
+        return Brand::with('product')->get();
     }
 
     // Get one specific rows from DB
@@ -73,6 +78,27 @@ class DemoController extends Controller
         // return Product::sum('price');
         return Product::count('price');
         // return Product::avg('price');
+    }
+
+    // Ordering
+    public function Order(Request $request) {
+        return Product::orderBy('price', 'desc')->get();
+    }
+
+    // Pagination
+    public function Pagination(Request $request) {
+        return Product::paginate(
+            $perPage = 2,
+            // $columns = ['*'],
+            $columns = ['title', 'price'],
+            $pageName = 'item',
+        );
+        // return Product::simplePaginate(10);
+    }
+    
+    // Get all brand with product rows from DB
+    public function GetAllProductsWithBrand(Request $request) {
+        return Product::with('brand')->get();
     }
 
 }
