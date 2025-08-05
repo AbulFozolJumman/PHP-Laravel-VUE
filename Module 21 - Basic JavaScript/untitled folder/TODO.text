@@ -1,0 +1,32 @@
+1. Varaible, Sub,Sum,Div,Mul
+2. Data Type
+   -String
+   -Number
+   -Boolean
+   -Null
+   -Array
+   -Object
+   -Undefined
+
+3. Operators
+    -  Arithmetic Operators
+    -  Comparison Operators
+    -  Logical Operators
+
+
+4. If else, if else ladder
+
+5. Loop
+    -for loop
+    -while loop
+    -do while loop
+
+
+6. Function
+   - Regular Function
+   - Arrow Function
+   - IIF (immediate invoked function) Function / anonymous
+   - Anonymous Function
+   - Function params
+   - Function Rest Params
+   - Function Return
