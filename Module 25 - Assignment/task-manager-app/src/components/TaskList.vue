@@ -2,33 +2,34 @@
 import { ref } from 'vue';
 import tasks from '../data/data';
 
-const props = defineProps({
-    tasks: {
-        type: Array,
-        required: true
-    }
-});
-
 const newTaskTitle = ref('');
 
 const addTask = () => {
     if (newTaskTitle.value.trim() && newTaskTitle.value.length > 3) {
-        props.tasks.push({ id: props.tasks.length + 1, title: newTaskTitle.value, isCompleted: false });
+        tasks.push({ id: tasks.length + 1, title: newTaskTitle.value, isCompleted: false });
         newTaskTitle.value = '';
     }
     else {
         alert('Task title must be at least 4 characters long.');
     }
 };
+
+const removeTask = (taskId) => {
+    const index = tasks.findIndex(task => task.id === taskId);
+    if (index !== -1) {
+        tasks.splice(index, 1);
+    }
+};
 </script>
 
 <template>
-    <div class="task-list">
+   <div class="task-list w-[600px] mx-auto p-5 border border-gray-300 rounded mt-10">
         <h2>Task Management</h2>
         <ul>
-            <li v-show="task.title.length > 0" v-for="task in tasks" :key="task.id" :style="{ backgroundColor: task.isCompleted ? 'green' : 'red', border: task.isCompleted ? '2px solid red' : 'none' }">
+            <li v-show="task.title.length > 0" v-for="task in tasks" :key="task.id" :style="{ backgroundColor: task.isCompleted ? 'green' : 'gray', border: task.isCompleted ? '2px solid red' : 'none' }">
                 <p>{{ task.title }} - {{ task.isCompleted ? 'Completed' : 'Pending' }}</p>
                 <input type="checkbox" v-model="task.isCompleted" />
+                <button @click="removeTask(task.id)" class="bg-red-500 text-white p-2 rounded">Remove</button>
             </li>
             <li v-if="tasks.length === 0">No tasks available.</li>
         </ul>

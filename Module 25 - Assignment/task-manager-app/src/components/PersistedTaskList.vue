@@ -2,10 +2,6 @@
 import { ref, watch } from 'vue';
 
 const tasksFromStorage = localStorage.getItem('tasks');
-if (tasksFromStorage) {
-    tasks.splice(0, tasks.length, ...JSON.parse(tasksFromStorage));
-}
-
 const tasks = ref(tasksFromStorage ? JSON.parse(tasksFromStorage) : []);
 const newTaskTitle = ref('');
 
@@ -21,15 +17,21 @@ const addTask = () => {
 watch(tasks, (newTasks) => {
     localStorage.setItem('tasks', JSON.stringify(newTasks));
 }, { deep: true }); 
+
+const removeTask = (taskId) => {
+    tasks.value = tasks.value.filter(task => task.id !== taskId);
+};
+
 </script>
 
 <template>
-    <div class="task-list">
+    <div class="task-list w-[600px] mx-auto p-5 border border-gray-300 rounded mt-10">
         <h2>Task Management</h2>
         <ul>
-            <li class="flex justify-between items-center p-5 mb-2" v-show="task.title.length > 0" v-for="task in tasks" :key="task.id" :style="{ backgroundColor: task.isCompleted ? 'green' : 'red', border: task.isCompleted ? '2px solid red' : 'none' }">
+            <li class="flex justify-between items-center p-5 mb-2" v-show="task.title.length > 0" v-for="task in tasks" :key="task.id" :style="{ backgroundColor: task.isCompleted ? 'green' : 'gray', border: task.isCompleted ? '2px solid red' : 'none' }">
                 <p>{{ task.title }} - {{ task.isCompleted ? 'Completed' : 'Pending' }}</p>
                 <input type="checkbox" v-model="task.isCompleted" />
+                <button @click="removeTask(task.id)" class="bg-red-500 text-white p-2 rounded">Remove</button>
             </li>
             <li v-if="tasks.length === 0">No tasks available.</li>  
         </ul>
