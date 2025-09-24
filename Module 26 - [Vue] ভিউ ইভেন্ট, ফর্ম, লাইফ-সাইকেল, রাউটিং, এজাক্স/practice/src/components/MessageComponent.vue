@@ -6,7 +6,7 @@
 </script>
 
 <template>
-  <label>First Component</label> <br>
+  <label>Message Component</label> <br>
   <input type="text" :value="modelValue" @input="emit('update:modelValue', $event.target.value)">
 </template>
 
